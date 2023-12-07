@@ -1,0 +1,12 @@
+C:\Users\agido\source\repos\micromanager\access-bridge-explorer-master\src\WindowsAccessBridgeInterop\bin\Debug\WindowsAccessBridgeInterop.dll
+C:\Users\agido\source\repos\micromanager\access-bridge-explorer-master\src\WindowsAccessBridgeInterop\bin\Debug\WindowsAccessBridgeInterop.pdb
+C:\Users\agido\source\repos\micromanager\access-bridge-explorer-master\src\WindowsAccessBridgeInterop\obj\Debug\WindowsAccessBridgeInterop.csproj.AssemblyReference.cache
+C:\Users\agido\source\repos\micromanager\access-bridge-explorer-master\src\WindowsAccessBridgeInterop\obj\Debug\WindowsAccessBridgeInterop.csproj.CoreCompileInputs.cache
+C:\Users\agido\source\repos\micromanager\access-bridge-explorer-master\src\WindowsAccessBridgeInterop\obj\Debug\WindowsAccessBridgeInterop.dll
+C:\Users\agido\source\repos\micromanager\access-bridge-explorer-master\src\WindowsAccessBridgeInterop\obj\Debug\WindowsAccessBridgeInterop.pdb
+C:\Users\agido\source\repos\WindowsFormsApp3\WindowsAccessBridgeInterop\bin\Debug\WindowsAccessBridgeInterop.dll
+C:\Users\agido\source\repos\WindowsFormsApp3\WindowsAccessBridgeInterop\bin\Debug\WindowsAccessBridgeInterop.pdb
+C:\Users\agido\source\repos\WindowsFormsApp3\WindowsAccessBridgeInterop\obj\Debug\WindowsAccessBridgeInterop.csproj.AssemblyReference.cache
+C:\Users\agido\source\repos\WindowsFormsApp3\WindowsAccessBridgeInterop\obj\Debug\WindowsAccessBridgeInterop.csproj.CoreCompileInputs.cache
+C:\Users\agido\source\repos\WindowsFormsApp3\WindowsAccessBridgeInterop\obj\Debug\WindowsAccessBridgeInterop.dll
+C:\Users\agido\source\repos\WindowsFormsApp3\WindowsAccessBridgeInterop\obj\Debug\WindowsAccessBridgeInterop.pdb
