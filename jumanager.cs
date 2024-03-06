@@ -9,6 +9,9 @@ using WindowsAccessBridgeInterop;
 
 namespace umanagercontroller
 {
+    // must enable that:
+    // %JRE_HOME%\bin\jabswitch -enable 
+    // in the directory of micromanager
     internal class jumanager
     {
         [DllImport("user32.dll", SetLastError = true)]
@@ -23,6 +26,7 @@ namespace umanagercontroller
         //for the preset buttons.
         List<JavaObjectHandle> jHandles = new List<JavaObjectHandle>();
         List<string> botton_text = new List<string>();
+        public int buttons_count = 0;
 
         //Go over all the object on the java form and extract the buttons. Also identify which is the
         // live button and have a special case for it.
@@ -44,8 +48,13 @@ namespace umanagercontroller
                     }
                     else
                     {
-                        buttons.Add(child);
-                        jHandles.Add(childHandle);
+                        string bname = button_caption.Substring(0, 2);
+                        if (bname == "p_")
+                        {
+                            buttons.Add(child);
+                            jHandles.Add(childHandle);
+                            buttons_count++;
+                        }
                     }
                 }
                 find_all_buttons(child.GetChildren(), childHandle);
@@ -62,17 +71,26 @@ namespace umanagercontroller
             AccessibleWindow win = java.CreateAccessibleWindow(wHandle);
             //Get Access to the Java Object that represents the main window.
             java.Functions.GetAccessibleContextFromHWND(wHandle, out int vmid, out JavaObjectHandle jwindowHandle);
-            IEnumerable<AccessibleNode> children = win.GetChildren();
-            //then find all the children nodes which are buttons - can do it with other note types as well.
-            // Importantly here you can use the program "AccessBridgeExplorer.exe" to find all the details 
-            // for the java windows and components. Do it recursively here.
-            find_all_buttons(children, jwindowHandle);
+            if (win is null)
+            {
+                MessageBox.Show("Cannot find micromanager \"pedal_panel\" make sure that it is open");
+                Application.Exit();
+            }
+            else
+            {
+                IEnumerable<AccessibleNode> children = win.GetChildren();
+                //then find all the children nodes which are buttons - can do it with other note types as well.
+                // Importantly here you can use the program "AccessBridgeExplorer.exe" to find all the details 
+                // for the java windows and components. Do it recursively here.
+                find_all_buttons(children, jwindowHandle);
+            }
         }
 
         public string click()
         {
             //Get Possible Actions
-            current_active_button = (current_active_button + 1) % 3;
+            if (buttons_count == 0) return "";
+            current_active_button = (current_active_button + 1) % buttons_count;
             AccessibleNode b = buttons[current_active_button];
             JavaObjectHandle j = jHandles[current_active_button];
             java.Functions.GetAccessibleActions(b.JvmId, j, out AccessibleActions accessibleActions);
@@ -84,18 +102,19 @@ namespace umanagercontroller
             accessibleActionsToDo.actionsCount = accessibleActions.actionsCount;
 
             //Do Actions
-            live.Refresh(); // to get the right caption on the button when it changes.
-            if (live.GetTitle().Replace("push button: ", "") == "Stop Live")
-            {
-                java.Functions.DoAccessibleActions(live.JvmId, jLive, ref accessibleActionsToDo, out int failure);
-                java.Functions.DoAccessibleActions(b.JvmId, j, ref accessibleActionsToDo, out failure);
-                java.Functions.DoAccessibleActions(live.JvmId, jLive, ref accessibleActionsToDo, out failure);
-            }
-            else
-            {
-                java.Functions.DoAccessibleActions(b.JvmId, j, ref accessibleActionsToDo, out int failure);
-            }
-            return b.GetTitle();
+            //live.Refresh(); // to get the right caption on the button when it changes.
+            //if (live.GetTitle().Replace("push button: ", "") == "Stop Live")
+            //{
+            //java.Functions.DoAccessibleActions(live.JvmId, jLive, ref accessibleActionsToDo, out int failure);
+            //java.Functions.DoAccessibleActions(b.JvmId, j, ref accessibleActionsToDo, out failure);
+            //java.Functions.DoAccessibleActions(live.JvmId, jLive, ref accessibleActionsToDo, out failure);
+            //}
+            //else
+            //{
+            java.Functions.DoAccessibleActions(b.JvmId, j, ref accessibleActionsToDo, out int failure);
+            //}
+            string button_caption = b.GetTitle().Replace("push button: ", "");
+            return $"B({buttons_count}):{button_caption}";
 
         }
     }

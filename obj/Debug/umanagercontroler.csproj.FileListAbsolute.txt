@@ -37,3 +37,16 @@ C:\Users\agido\source\repos\micromanager\obj\Debug\umanagercontroler.csproj.Copy
 C:\Users\agido\source\repos\micromanager\obj\Debug\WindowsFormsApp3.exe
 C:\Users\agido\source\repos\micromanager\obj\Debug\WindowsFormsApp3.pdb
 C:\Users\agido\source\repos\micromanager\obj\Debug\umanagercontroller.Form1.resources
+C:\Users\admin\source\repos\projects_albert\micromanager\bin\Debug\WindowsFormsApp3.exe.config
+C:\Users\admin\source\repos\projects_albert\micromanager\bin\Debug\WindowsFormsApp3.exe
+C:\Users\admin\source\repos\projects_albert\micromanager\bin\Debug\WindowsFormsApp3.pdb
+C:\Users\admin\source\repos\projects_albert\micromanager\bin\Debug\WindowsAccessBridgeInterop.dll
+C:\Users\admin\source\repos\projects_albert\micromanager\bin\Debug\WindowsAccessBridgeInterop.pdb
+C:\Users\admin\source\repos\projects_albert\micromanager\obj\Debug\umanagercontroler.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\projects_albert\micromanager\obj\Debug\umanagercontroller.Form1.resources
+C:\Users\admin\source\repos\projects_albert\micromanager\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\admin\source\repos\projects_albert\micromanager\obj\Debug\umanagercontroler.csproj.GenerateResource.cache
+C:\Users\admin\source\repos\projects_albert\micromanager\obj\Debug\umanagercontroler.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\projects_albert\micromanager\obj\Debug\umanager.42870C04.Up2Date
+C:\Users\admin\source\repos\projects_albert\micromanager\obj\Debug\WindowsFormsApp3.exe
+C:\Users\admin\source\repos\projects_albert\micromanager\obj\Debug\WindowsFormsApp3.pdb

@@ -40,9 +40,29 @@ namespace umanagercontroller
         //button using GetAccessibleChildFromContext as i mentioned above)
         private void button1_Click(object sender, EventArgs e)
         {
-            button1.Text = jum.click();
+            if (jum.buttons_count == 0) {
+                jum = new jumanager(); //in case there are no buttons try again.
+            }
+            try
+            {
+                label1.Text = jum.click();
+            }catch (Exception ex)
+            {
+                //in case there was an error, it means that somebody closed the window.
+                // so try again.
+                jum = new jumanager();
+            }
             
         }
-  
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            jum = new jumanager();
+        }
     }
 }
